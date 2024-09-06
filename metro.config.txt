@@ -1,0 +1,125 @@
+// metro.config.js
+const path = require("path");
+
+module.exports = {
+  transformer: {
+    minifierPath: require.resolve("metro-minify-terser"),
+    minifierConfig: {
+      // Options de configuration pour Terser
+      compress: {
+        // Réduction du code
+        drop_console: true, // Supprimer les appels console.*
+        drop_debugger: true, // Supprimer les appels debugger
+        passes: 2, // Nombre de passes pour la compression
+      },
+      mangle: {
+        // Options pour le mangle des noms
+        toplevel: true, // Également mangle les noms des variables et fonctions au niveau supérieur
+      },
+      format: {
+        // Options de format
+        comments: false, // Supprimer les commentaires
+      },
+    },
+  },
+  resolver: {
+    // Configurez ici les options de résolution des modules si nécessaire
+  },
+  server: {
+    // Configurez ici les options du serveur si nécessaire
+  },
+  // Autres configurations possibles pour Metro
+  watchFolders: [
+    path.resolve(__dirname, "app"), // Dossier principal de votre code source
+    path.resolve(__dirname, "components"), // Dossier des composants réutilisables
+    path.resolve(__dirname, "assets"), // Dossier des ressources statiques (images, polices, etc.)
+    path.resolve(__dirname, "utils"), // Dossier des utilitaires et helpers
+    path.resolve(__dirname, "services"),
+    path.resolve(__dirname, "constants"),
+    path.resolve(__dirname, "hooks"),
+    path.resolve(__dirname, "legendstate"),
+  ],
+};
+
+
+
+
+
+ {/*       
+      <Modal transparent={true} visible={isLoading} animationType="slide">
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <ActivityIndicator size="large" color={COLORS.primary} />
+            <Text style={styles.modalText}>
+              Chargement de vos données... {Math.round(progress)}%
+            </Text>
+            <View style={styles.progressBarContainer}>
+              <View style={[styles.progressBar, { width: `${progress}%` }]} />
+            </View>
+          </View>
+        </View>
+      </Modal> */}
+
+
+
+
+
+
+
+
+
+       {/* <Modal
+        visible={isVerificationModalVisible}
+        animationType="fade"
+        transparent
+        onRequestClose={() => setVerificationModalVisible(false)}
+      >
+        <View style={styles.modalBackdrop}>
+          <Animated.View entering={BounceIn} style={styles.modalContent}>
+            <Text style={styles.modalText}>
+              Un email de vérification a été envoyé. Veuillez vérifier votre
+              boîte de réception.
+            </Text>
+            <TouchableOpacity
+              style={[
+                styles.modalButton,
+                {
+                  backgroundColor:
+                    theme === "pink" ? COLORS.accent500 : COLORS.accent800,
+                },
+              ]}
+              onPress={() => setVerificationModalVisible(false)}
+            >
+              <Text style={styles.modalButtonText}>Fermer</Text>
+            </TouchableOpacity>
+          </Animated.View>
+        </View>
+      </Modal>
+
+      <Modal
+        visible={resetEmailSentModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setResetEmailSentModalVisible(false)}
+      >
+        <View style={styles.modalBackdrop}>
+          <Animated.View entering={BounceIn} style={styles.modalContent}>
+            <Text style={styles.modalText}>
+              Un e-mail de réinitialisation de mot de passe a été envoyé à{" "}
+              {loginEmail}.
+            </Text>
+            <TouchableOpacity
+              style={[
+                styles.modalButton,
+                {
+                  backgroundColor:
+                    theme === "pink" ? COLORS.accent500 : COLORS.accent800,
+                },
+              ]}
+              onPress={() => setResetEmailSentModalVisible(false)}
+            >
+              <Text style={styles.modalButtonText}>Fermer</Text>
+            </TouchableOpacity>
+          </Animated.View>
+        </View>
+      </Modal>

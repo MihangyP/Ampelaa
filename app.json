@@ -1,0 +1,82 @@
+{
+  "expo": {
+    "name": "Ampela",
+    "slug": "Ampela",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo/Logo_u2.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/logo/Logo_u2.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fedada"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ampelaIos"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo/Logo_u2.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.maminiaina_mercia.Ampela",
+      "permissions": [
+        "android.permission.WAKE_LOCK",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/logo/Logo_u2.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+
+        {
+          "icon": "./assets/images/logo/logo-1.png",
+          "color": "#ffffff",
+          "sounds": ["./assets/sound/notification.mp3"]
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Cette applicaion necessite une opermission vers votre gallerie"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      "expo-router",
+      "expo-font",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      // "eas": {
+      //   "projectId": "71d88606-9e38-42eb-a633-106e37e52f3d"
+      // }
+    }
+  }
+}
